@@ -5,9 +5,6 @@ gem 'rails', '3.2.11'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
-
-
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -34,5 +31,17 @@ gem 'jquery-rails'
 # Deploy with Capistrano
 # gem 'capistrano'
 
-# To use debugger
-# gem 'debugger'
+group :development, :test do
+  gem 'debugger'
+  gem 'guard-spork'
+  gem 'guard-rspec'
+  gem 'capybara'
+  gem 'shoulda'
+  gem 'database_cleaner'
+end
+
+group :test do
+  gem 'rspec-rails'
+end
+
+gem 'mysql2'
