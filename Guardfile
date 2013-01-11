@@ -22,8 +22,7 @@ guard 'rspec' do
   watch(%r{^spec/acceptance/steps/(.+)_steps\.rb$})   { |m| Dir[File.join("**/#{m[1]}.feature")][0] || 'spec/acceptance' }
 end
 
-
-guard 'spork', :cucumber_env => { 'RAILS_ENV' => 'test' }, :rspec_env => { 'RAILS_ENV' => 'test' } do
+guard 'spork', :cucumber => false, :test_unit => false, :rspec_env => { 'RAILS_ENV' => 'test' } do
   watch('config/application.rb')
   watch('config/environment.rb')
   watch('config/environments/test.rb')
@@ -34,3 +33,13 @@ guard 'spork', :cucumber_env => { 'RAILS_ENV' => 'test' }, :rspec_env => { 'RAIL
   watch('test/test_helper.rb') { :test_unit }
   watch(%r{features/support/}) { :cucumber }
 end
+
+notification :tmux,
+  :display_message => true,
+  :timeout => 5, # in seconds
+  :default_message_format => '%s >> %s',
+  # the first %s will show the title, the second the message
+  # Alternately you can also configure *success_message_format*,
+  # *pending_message_format*, *failed_message_format*
+  :line_separator => ' > ', # since we are single line we need a separator
+  :color_location => 'status-left-bg' # to customize which tmux element will change color

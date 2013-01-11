@@ -38,6 +38,10 @@ group :development, :test do
   gem 'capybara'
   gem 'shoulda'
   gem 'database_cleaner'
+  gem 'rb-inotify', :require => false
+  gem 'rb-fsevent', :require => false
+  gem 'rb-fchange', :require => false
+  gem 'terminal-notifier-guard'
 end
 
 group :test do
