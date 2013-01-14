@@ -7,7 +7,7 @@ feature "home page", %q{
 } do
 
   background do
-    visit "/"
+    visit root_path
   end
 
   scenario "lanching the home page" do
