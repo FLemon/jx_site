@@ -3,7 +3,7 @@ require 'spec_helper'
 feature "header", %q{
   In order to see other pages
   As a user
-  I want to be able to navigate accross the site 
+  I want to be able to navigate accross the site
 } do
 
   background do
@@ -12,5 +12,7 @@ feature "header", %q{
 
   scenario "navigation list" do
     page.should have_link("Blogs")
+    click_on 'Blogs'
+    current_path.should == blogs_path
   end
 end
