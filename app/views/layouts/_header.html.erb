@@ -1,8 +1,10 @@
 <header>
   <div>
-    <h1>Jin's Site</h1>
-    <ul>
-      <li><%= link_to t('blogs'), blogs_path %></li>
+    <p id='title'><%= t('.title') %></p>
+    <p id='version'><%= t(".version") %></h5>
+    <ul id='menu'>
+      <li><%= link_to t('home'), root_path %></li>
+      <li><%= link_to t('blogs.index.title'), blogs_path %></li>
     </ul>
   </div>
 </header>
