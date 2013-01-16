@@ -4,4 +4,12 @@
 en:
   hello: "Hello world"
 
-  blogs: "Blogs"
+  layouts:
+    header:
+      title: "Jin's Site"
+      version: "v0.1"
+  blogs:
+    index:
+      title: "Blogs"
+      new: "New Blog"
+  home: "Home"

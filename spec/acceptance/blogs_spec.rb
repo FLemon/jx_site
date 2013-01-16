@@ -18,6 +18,7 @@ feature "blogs page", %q{
   scenario "view all blogs" do
     blog_content = "example blog content"
     Blog.create(content: blog_content)
+    visit current_path
     page.should have_content(blog_content)
   end
 end
