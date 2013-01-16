@@ -100,8 +100,8 @@ GEM
     mocha (0.10.5)
       metaclass (~> 0.0.1)
     multi_json (1.5.0)
-    mysql2 (0.3.11)
     nokogiri (1.5.6)
+    pg (0.14.1)
     polyglot (0.3.3)
     pry (0.9.10)
       coderay (~> 1.0.5)
@@ -203,7 +203,7 @@ DEPENDENCIES
   guard-spork
   jquery-rails
   launchy
-  mysql2
+  pg
   rails (= 3.2.11)
   rb-fchange
   rb-fsevent
