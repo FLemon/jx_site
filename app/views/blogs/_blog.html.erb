@@ -1,2 +1,4 @@
 <label for="">Content</label>
-<%= blog.content %>
+<%= link_to blog.content, blog_path(blog) %>
+<%= link_to 'Edit', edit_blog_path(blog) %>
+<%= link_to 'Remove', blog, :method => :delete %>
