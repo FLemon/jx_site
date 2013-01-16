@@ -44,8 +44,8 @@ feature "blogs page", %q{
     end
 
     scenario "launching the blogs index page" do
-      page.should have_content(content_1)
-      page.should have_content(content_2)
+      page.should have_no_content(content_1)
+      page.should have_no_content(content_2)
       page.should have_content(title_1)
       page.should have_content(title_2)
     end

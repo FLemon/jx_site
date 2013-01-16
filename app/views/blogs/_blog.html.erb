@@ -1,6 +1,10 @@
 <p>
-  <%= link_to blog.title, blog_path(blog) %>
   <%= link_to 'Edit', edit_blog_path(blog) %>
   <%= link_to 'Remove', blog, :method => :delete %>
 </p>
-<%= blog.content %>
+<p>
+  <%= blog.title %>
+</p>
+<p>
+  <%= blog.content %>
+</p>
