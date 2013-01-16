@@ -23,6 +23,7 @@ feature "blogs page", %q{
       current_path.should == new_blog_path
       fill_in 'blog[content]', :with => new_blog_content
       click_on "Post"
+      current_path.should == blog_path(Blog.last)
       page.should have_content(new_blog_content)
     end
   end
@@ -77,6 +78,7 @@ feature "blogs page", %q{
       current_path.should == edit_blog_path(blog)
       fill_in 'blog[content]', :with => new_blog_content
       click_on "Post"
+      current_path.should == blog_path(blog)
       page.should have_no_content(blog_content)
       page.should have_content(new_blog_content)
     end
