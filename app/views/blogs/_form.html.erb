@@ -1,4 +1,5 @@
 <%= form_for @blog do |f| %>
+  email: <%= f.text_field :email %>
   title: <%= f.text_field :title %>
   content: <%= f.text_area :content %>
   <%= f.submit 'Post' %>

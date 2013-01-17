@@ -6,6 +6,8 @@ feature "blogs page", %q{
   I want to be able to create and manage blogs
 } do
 
+  let(:user_email) { "test@example.com" }
+
   background do
     visit root_path
     click_on 'Blogs'
@@ -24,10 +26,12 @@ feature "blogs page", %q{
       current_path.should == new_blog_path
       fill_in 'blog[content]', :with => new_blog_content
       fill_in 'blog[title]', :with => new_blog_title
+      fill_in 'blog[email]', :with => user_email
       click_on "Post"
       current_path.should == blog_path(Blog.last)
       page.should have_content(new_blog_content)
       page.should have_content(new_blog_title)
+      page.should have_content(user_email)
     end
   end
 
@@ -38,8 +42,8 @@ feature "blogs page", %q{
     let(:content_2) { "beta example blog content" }
 
     before(:each) do
-      Blog.create(content: content_1, title: title_1)
-      Blog.create(content: content_2, title: title_2)
+      Blog.create(content: content_1, title: title_1, email: user_email)
+      Blog.create(content: content_2, title: title_2, email: user_email)
       visit current_path
     end
 
@@ -48,13 +52,14 @@ feature "blogs page", %q{
       page.should have_no_content(content_2)
       page.should have_content(title_1)
       page.should have_content(title_2)
+      page.should have_content(user_email)
     end
   end
 
   context "inspect a blog" do
     let(:blog_content) { "alpha example blog content" }
     let(:blog_title) { "alpha example blog title" }
-    let(:blog) { Blog.create(content: blog_content, title: blog_title) }
+    let(:blog) { Blog.create(content: blog_content, title: blog_title, email: user_email) }
 
     before(:each) do
       blog
@@ -73,7 +78,7 @@ feature "blogs page", %q{
     let(:blog_content) { "alpha example blog content" }
     let(:blog_title) { "alpha example blog title" }
     let(:new_blog_content) { "beta example blog content" }
-    let(:blog) { Blog.create(content: blog_content, title: blog_title) }
+    let(:blog) { Blog.create(content: blog_content, title: blog_title, email: user_email) }
 
     before(:each) do
       blog
@@ -95,7 +100,7 @@ feature "blogs page", %q{
   context "remove a blog" do
     let(:blog_content) { "alpha example blog content" }
     let(:blog_title) { "alpha example blog title" }
-    let(:blog) { Blog.create(content: blog_content, title: blog_title) }
+    let(:blog) { Blog.create(content: blog_content, title: blog_title, email: user_email) }
 
     before(:each) do
       blog

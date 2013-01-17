@@ -4,5 +4,6 @@
 <% @blogs.each do |blog| %>
   <p>
     <%= link_to blog.title, blog_path(blog) %>
+    by <%= blog.email %>
   </p>
 <% end %>
