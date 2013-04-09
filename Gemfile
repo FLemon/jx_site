@@ -35,17 +35,17 @@ group :development, :test do
   gem 'debugger'
   gem 'guard-spork'
   gem 'guard-rspec'
-  gem 'capybara'
-  gem 'shoulda'
-  gem 'database_cleaner'
   gem 'rb-inotify', :require => false
   gem 'rb-fsevent', :require => false
   gem 'rb-fchange', :require => false
   gem 'terminal-notifier-guard'
+  gem 'letter_opener'
 end
 
 group :test do
-  gem 'launchy'
+  gem 'capybara'
+  gem 'shoulda'
+  gem 'database_cleaner'
   gem 'rspec-rails'
 end
 
