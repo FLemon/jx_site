@@ -11,14 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130117125709) do
+ActiveRecord::Schema.define(:version => 20130117180640) do
 
   create_table "blogs", :force => true do |t|
     t.text     "content"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
     t.string   "title"
-    t.string   "email",      :null => false
+    t.string   "email",                         :null => false
+    t.boolean  "granted",    :default => false
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "email",                            :null => false
+    t.string   "name"
+    t.boolean  "access_granted", :default => true, :null => false
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
   end
 
 end
