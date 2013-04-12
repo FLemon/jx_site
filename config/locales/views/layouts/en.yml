@@ -1,0 +1,13 @@
+en:
+  layouts:
+    application:
+      title: "JxSite"
+    header:
+      title: "Jin's Site"
+      nav:
+        home: "home"
+        blogs: "blogs"
+    sidebar:
+      title: "sidebar title"
+    footer:
+      signiture: "Jin.X"

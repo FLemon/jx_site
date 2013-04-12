@@ -6,11 +6,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </a>
-      <a class="brand" href="#">JxSite</a>
+      <a class="brand" href="#"><%= t('.title') %></a>
       <div class="container nav-collapse">
         <ul class="nav">
-          <li><%= link_to t('home'), root_path %></li>
-          <li><%= link_to t('blogs.index.title'), blogs_path %></li>
+          <li><%= link_to t('.nav.home'), root_path %></li>
+          <li><%= link_to t('.nav.blogs'), blogs_path %></li>
         </ul>
       </div><!--/.nav-collapse -->
     </div>
