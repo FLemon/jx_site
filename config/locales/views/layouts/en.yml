@@ -7,6 +7,7 @@ en:
       nav:
         home: "home"
         blogs: "blogs"
+        p_euler: "project euler"
     sidebar:
       title: "sidebar title"
     footer:

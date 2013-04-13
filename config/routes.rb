@@ -1,5 +1,6 @@
 JxSite::Application.routes.draw do
 
+  match '/project_euler' => 'home#p_euler', :via => :get, :as => :p_euler_home
   resources :blogs
   # The priority is based upon order of creation:
   # first created -> highest priority.

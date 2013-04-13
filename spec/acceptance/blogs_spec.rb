@@ -10,7 +10,7 @@ feature "blogs page", %q{
 
   background do
     visit root_path
-    click_on 'Blogs'
+    click_on 'blogs'
   end
 
   context "create a new blog" do
@@ -18,8 +18,8 @@ feature "blogs page", %q{
     let(:new_blog_title) { "new example title" }
 
     before(:each) do
-      page.should have_link("New Blog")
-      click_on "New Blog"
+      page.should have_link("new blog")
+      click_on "new blog"
     end
 
     scenario "launching blog new page and fill in content" do
