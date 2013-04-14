@@ -1,1 +1,7 @@
 <h1>Project Euler</h1>
+<h2>problems</h2>
+
+<% @problem_sources.each do |source, answer| %>
+  <%= raw CodeRay.scan(source, :ruby).div(:css => :class)%>
+  answer : <%= answer %>
+<% end %>

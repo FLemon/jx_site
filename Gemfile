@@ -52,4 +52,5 @@ group :test do
   gem 'rspec-rails'
 end
 
+gem 'coderay', "~> 1.0.9"
 gem 'pg'
