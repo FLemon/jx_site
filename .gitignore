@@ -16,3 +16,5 @@
 
 # Ignore database file
 /config/database.yml
+
+/public

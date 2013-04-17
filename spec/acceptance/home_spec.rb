@@ -20,7 +20,7 @@ feature "home page", %q{
         click_link "project euler"
       end
 
-      page.should have_content("def multiples_of_3_and_5(below_x=1000)")
+      page.should have_content("def self.multiples_of_3_and_5(below_x=1000)")
     end
   end
 end

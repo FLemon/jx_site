@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe PEuler do
+  subject { PEuler }
   describe "#multiples_of_3_and_5" do
     context "below 1000" do
       it "should return 233168" do
