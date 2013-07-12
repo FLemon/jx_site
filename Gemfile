@@ -34,6 +34,7 @@ gem 'jquery-rails'
 # gem 'capistrano'
 
 group :development, :test do
+  gem 'debugger'
   gem 'guard-spork'
   gem 'guard-rspec'
   gem 'rb-inotify', :require => false
@@ -51,6 +52,5 @@ group :test do
 end
 
 gem 'twitter-bootstrap-rails'
-gem 'debugger'
 gem 'coderay', '~> 1.0.9'
 gem 'pg'
