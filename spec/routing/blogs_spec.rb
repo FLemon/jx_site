@@ -5,7 +5,6 @@ describe "routing to blogs page" do
     { :get => "/blogs" }.
       should route_to(
         :controller => "blogs",
-        :action => "index"
-      )
+        :action => "index")
   end
 end
