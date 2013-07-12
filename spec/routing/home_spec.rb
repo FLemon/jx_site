@@ -5,8 +5,7 @@ describe "route to home page" do
     { :get => "/" }.
       should route_to(
         :controller => "home",
-        :action => "index"
-      )
+        :action => "index")
   end
 end
 
@@ -15,7 +14,6 @@ describe "route to project euler page" do
     { :get => "/project_euler" }.
       should route_to(
         :controller => "home",
-        :action => "p_euler"
-      )
+        :action => "p_euler")
   end
 end
